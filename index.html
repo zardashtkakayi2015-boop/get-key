@@ -1,15 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SAB STACKER | KEY SYSTEM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAB STACKER | OFFICIAL HUB</title>
     <style>
-        body { background: #000; color: #ff3333; font-family: 'Courier New', monospace; text-align: center; padding-top: 100px; }
-        .btn { background: #ff3333; color: white; padding: 20px 40px; text-decoration: none; border-radius: 10px; font-weight: bold; border: 2px solid white; display: inline-block; margin-top: 30px; }
+        :root {
+            --primary: #8a2be2; /* Neon Purple */
+            --bg: #0f0f12;
+            --card: #1a1a20;
+            --text: #e0e0e0;
+        }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .header {
+            width: 100%; padding: 40px 0; background: linear-gradient(180deg, #16161d 0%, var(--bg) 100%);
+            text-align: center; border-bottom: 1px solid #2d2d3d;
+        }
+        h1 { color: white; text-shadow: 0 0 15px var(--primary); margin: 0; font-size: 2.2rem; }
+        .badge { 
+            background: var(--primary); color: white; padding: 4px 12px; 
+            border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;
+        }
+        .container { max-width: 500px; width: 90%; margin-top: 30px; }
+        .card { 
+            background: var(--card); border: 1px solid #333; padding: 20px; 
+            border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .script-box {
+            background: #000; color: #00ff00; padding: 15px; border-radius: 8px;
+            font-family: 'Consolas', monospace; font-size: 0.85rem;
+            overflow-x: auto; border: 1px solid #444; margin-top: 15px;
+        }
+        .btn-copy {
+            width: 100%; background: var(--primary); color: white; border: none;
+            padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;
+            margin-top: 15px; transition: 0.3s;
+        }
+        .btn-copy:active { transform: scale(0.98); }
+        .footer { margin-top: 50px; font-size: 0.8rem; color: #666; padding-bottom: 20px; }
     </style>
 </head>
 <body>
-    <h1>🍓 STRAWBERRY STACKER 🍓</h1>
-    <p>Complete the tasks to get your 24h key!</p>
-    <a href="PUT_YOUR_LINKVERTISE_LINK_HERE" class="btn">GET KEY NOW</a>
+    <div class="header">
+        <span class="badge">Verified Official</span>
+        <h1>STRAWBERRY STACKER</h1>
+        <p style="color: #888;">The #1 Mutation Script for Steal a Brainrot</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h3 style="margin-top:0;">Main Script</h3>
+            <p style="font-size: 0.9rem; color: #bbb;">Copy the code below and execute it in Delta or any Level 7 executor.</p>
+            
+            <div class="script-box" id="scriptCode">
+-- [[ SAB STACKER v2.0 ]] --
+local p = game.Players.LocalPlayer
+local b = workspace.Bases:FindFirstChild(p.Name)
+local e = b:FindFirstChild("Strawberry Elephant", true)
+if e then
+    local r = game:GetService("ReplicatedStorage"):FindFirstChild("ApplyMutation", true)
+    local m = {"Rainbow", "Divine", "Galaxy", "Cursed", "Lava", "Radioactive", "Gold", "Diamond"}
+    for _, v in pairs(m) do r:FireServer(e, v) task.wait(0.3) end
+end</div>
+            <button class="btn-copy" onclick="copyScript()">COPY TO CLIPBOARD</button>
+        </div>
+    </div>
+
+    <div class="footer">© 2026 Zardasht Scripts • Status: <span style="color:#00ff00;">Undetected</span></div>
+
+    <script>
+        function copyScript() {
+            const text = document.getElementById('scriptCode').innerText;
+            navigator.clipboard.writeText(text);
+            alert("Script Copied! Now paste it into Delta.");
+        }
+    </script>
 </body>
 </html>
+
